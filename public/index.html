@@ -21,9 +21,21 @@
 			<tbody>
 				<tr class="success" ng-repeat="book in books">
 					<td>{{book.title}}</td>
-					<td>{{book.price | currency}}</td>
+					<td>{{book.price | currency:'$'}}</td>
 				</tr>
 			</tbody>	
-	</table>	
+	</table>
+	<form role="form" method="post">
+		 <div class="form-group">
+		    <label>Title</label>
+		    <input type="text" class="form-control" id="title" placeholder="Enter title" ng-model="bookInstance.title">
+		 </div>
+		 <div class="form-group">
+		    <label>Price</label>
+		    <input type="number" class="form-control" id="price" placeholder="Price" ng-model="bookInstance.price">
+		 </div>
+		 <button type="submit" class="btn btn-default" ng-click ="save()">Submit</button>
+	</form>
+	
 </body>
 </html>
